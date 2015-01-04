@@ -10,26 +10,23 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync');
 
 // Setup Directories Names
-var sourceDir = 'assets/src/',
-	imgSourceDir = sourceDir + 'img/',
+var sourceDir = 'src/',
+	imgSourceDir = sourceDir + 'images/',
 	jsSourceDir = sourceDir + 'js/',
-	lessSourceDir = sourceDir + 'less/',
 	scssSourceDir = sourceDir + 'scss/';
-var buildDir = 'assets/build/',
-	imgBuildDir = buildDir + 'img/',
+	cssSourceDir = sourceDir + 'css/';
+var buildDir = './',
+	imgBuildDir = buildDir + 'images/',
 	jsBuildDir = buildDir + 'js/',
 	cssBuildDir = buildDir + 'css/';
 
 // Build JS
 gulp.task( 'js', function(){
 	gulp.src([
-			jsSourceDir + 'libs/jquery.min.js',
-			jsSourceDir + 'jquery.begin.js',
-			jsSourceDir + 'jquery.app.js',
-			jsSourceDir + 'jquery.end.js',
+			jsSourceDir + '*.js',
 		])
 		.pipe( plumber() )
-		.pipe( concat('jquery.app.js') )
+		.pipe( concat('main.js') )
 		.pipe( gulp.dest( jsBuildDir ) )
 		.pipe( rename({suffix:'.min'}) )
 		.pipe( uglify() )
@@ -40,10 +37,10 @@ gulp.task( 'js', function(){
 // disable sourcemap hack: sass({'sourcemap=none':true})
 // github.com/sindresorhus/gulp-ruby-sass/issues/113#issuecomment-53778451
 gulp.task( 'sass', function(){
-	gulp.src( scssSourceDir + 'styles.scss' )
+	gulp.src( scssSourceDir + '*.scss' )
 		.pipe( plumber() )
 		.pipe( sass({trace:true}) )
-		.pipe( gulp.dest( cssBuildDir ) );
+		.pipe( gulp.dest( cssSourceDir ) );
 });
 
 // Minify CSS
@@ -56,7 +53,7 @@ gulp.task( 'minify', function(){
 
 // Optimize Images
 gulp.task( 'img', function(){
-	gulp.src('assets/src/img/*')
+	gulp.src(imgSourceDir+'*')
 		.pipe( plumber() )
 		.pipe( imagemin() )
 		.pipe( gulp.dest( imgBuildDir ) );
