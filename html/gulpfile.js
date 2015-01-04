@@ -39,7 +39,7 @@ gulp.task( 'js', function(){
 gulp.task( 'sass', function(){
 	gulp.src( scssSourceDir + '*.scss' )
 		.pipe( plumber() )
-		.pipe( sass({trace:true}) )
+		.pipe( sass() )
 		.pipe( gulp.dest( cssSourceDir ) );
 });
 
@@ -71,7 +71,6 @@ gulp.task('sync', function() {
 
 // Gulp Watch
 gulp.task( 'watch', function(){
-	gulp.watch( jsSourceDir + '*.js', ['js'] );
 	gulp.watch( scssSourceDir + '**/*.scss', ['sass'] );
 	gulp.watch( imgSourceDir + '*', ['img'] );
 });
