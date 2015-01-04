@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>七匹狼官网</title>
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/mi-one-scroll.css" />
+</head>
+<body>
+<div class="header" id="header">
+    <div class="logo-bar">
+        <img src="images/logo.jpg" />
+    </div>
+    <div class="navbar">
+        <div class="wrap navbar-ul">
+            <ul>
+                <li><a href="#">七匹狼产品</a></li>
+                <li><a href="#">圣沃斯</a></li>
+                <li><a href="#">SWJEANS</a></li>
+                <li><a href="#">SWKIDS</a></li>
+                <li><a href="#">品牌咨询</a>
+                    <ul class="hidden">
+                        <li><a href="#">品牌历程</a></li>
+                        <li><a href="#">品牌荣耀</a></li>
+                        <li><a href="#">品牌资讯</a></li>
+                        <li><a href="#">品牌大片</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">店铺形象</a></li>
+                <li><a href="#">名士堂</a></li>
+                <li><a href="#">关于七匹狼</a>
+                    <ul class="spec hidden">
+                        <li><a href="#">企业社会责任</a></li>
+                        <li><a href="#">投资者信息</a></li>
+                        <li><a href="#">投标信息</a></li>
+                        <li><a href="#">人才招聘</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">VIP</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="page-content clearfix J_miOneScroll">
+    <div id="intro" class="section section-01" data-anchor="intro" data-title="七匹狼产品">
+        <div class="container">
+            <img src="images/section1.jpg" />
+        </div>
+        <a class="arrow J_goToSection2" title="让你知道佛教文化的厚重！" href="javascript: void(0);"></a>
+    </div>
+    <div id="features" class="section section-02" data-anchor="features" data-title="圣沃斯">
+        <div class="container">
+            <img src="images/section1.jpg" />
+        </div>
+    </div>
+    <div id="optimization" class="section section-03" data-anchor="optimization" data-title="SWJEANS">
+        <div class="container">
+            <img src="images/section1.jpg" />
+        </div>
+    </div>
+    <div id="usage" class="section section-04" data-anchor="usage" data-title="SWKIDS">
+        <div class="container">
+            <img src="images/section1.jpg" />
+        </div>
+    </div>
+    <div id="api" class="section section-05" data-anchor="api" data-title="品牌咨询">
+        <div class="container">
+            <img src="images/section1.jpg" />
+        </div>
+    </div>
+    <div id="method" class="section section-04" data-anchor="method" data-title="店铺形象">
+        <div class="container">
+            <img src="images/section1.jpg" />
+        </div>
+    </div>
+    <div id="demo" class="section section-03" data-anchor="demo" data-title="关于七匹狼">
+        <div class="container">
+            <img src="images/section1.jpg" />
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/mi1scroll.js"></script>
+<script>
+    function beforeMove(index, direction) {
+        var text,
+            directions = {
+                'up': '上',
+                'down': '下'
+            };
+
+        if (direction !== 0 && index > 1 && index < 5) {
+            text = typeof directions[direction] === 'string' ? directions[direction] : '定点';
+            $('.js-api-status').text('本页状态：向' + text + '翻滚中~');
+        }
+    }
+    function afterMove() {
+        $('.js-api-status').text('本页状态：翻滚完毕！');
+    }
+
+    jQuery(function($) {
+        var miOneScroll = $('.J_miOneScroll').miOneScroll({
+            updateURL: true,
+            sectionSelector: '.section',
+            beforeMove: beforeMove,
+            afterMove: afterMove
+        });
+
+        $('.J_goToSection2').on('click', function() {
+            miOneScroll.moveDown();
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+/**
+ * Title: Mi One Scroll
+ * Author: Sivan
+ * Date: 14-09-01 12:00
+ */
+.mi1scroll-container {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  _zoom: 1; }
+
+.mi1scroll-wrapper,
+.mi1scroll {
+  height: auto;
+  overflow: hidden;
+  _zoom: 1; }
+
+.mi1scroll-pagination {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  z-index: 99;
+  width: 20px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0); }
+  .mi1scroll-pagination li {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    margin: 7px 0; }
+  .mi1scroll-pagination a {
+    display: block;
+    width: 100%;
+    height: 100%; }
+    .mi1scroll-pagination a .dot {
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      text-indent: -9999em;
+      background: #fff; }
+    .mi1scroll-pagination a .title {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      text-align: right;
+      font-size: 12px;
+      white-space: nowrap;
+      color: #eee;
+      opacity: 0;
+      -webkit-transition: opacity .3s linear;
+      -moz-transition: opacity .3s linear;
+      -ms-transition: opacity .3s linear;
+      transition: opacity .3s linear; }
+    .mi1scroll-pagination a:hover .title {
+      opacity: 1; }
+  .mi1scroll-pagination .active a .dot {
+    top: 2px;
+    left: 2px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #F00;
+    background: none; }
+
+/*# sourceMappingURL=mi-one-scroll.css.map */

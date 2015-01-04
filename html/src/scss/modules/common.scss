@@ -1,0 +1,101 @@
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+    resize: vertical;
+}
+
+/*
+ * Image replacement
+ */
+.ir {
+    background-color: transparent;
+    border: 0;
+    text-align: left;
+    text-indent: -9999px;
+    overflow: hidden;
+    _zoom: 1;
+}
+
+/*
+ * Hide from browsers.
+ */
+.hidden {
+    display: none;
+}
+
+/*
+ * Clearfix: contain floats
+ */
+.group:before,
+.group:after {
+    content: " ";
+    display: table;
+}
+.group:after {
+    clear: both;
+}
+.group {
+    *zoom: 1;
+}
+
+
+/*
+ * Base styles
+ */
+html,
+button,
+input,
+select,
+textarea {
+    color: #000;
+}
+
+body {
+    font: 14px/1.5 arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;;
+    background: #fff;
+    // -webkit-font-smoothing: antialiased;
+}
+
+:link,
+:visited {
+    color: #666;
+    text-decoration: none;
+}
+a:hover,
+a:active {
+    text-decoration: underline;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
